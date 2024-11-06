@@ -37,7 +37,7 @@ Before starting, make sure to meet the following requirements:
    
    ```
    Rename-Computer -NewName "New-ComputerName" -Force -Restart
-```
+  ```
 
 ### II. Step 2: Install ADDS Role on DC1
 1. **Install the Active Directory Domain Services (ADDS) role**:
