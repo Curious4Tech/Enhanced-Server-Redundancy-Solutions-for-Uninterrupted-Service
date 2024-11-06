@@ -46,11 +46,13 @@ The `-Force` parameter suppresses prompts, and the `-Restart` parameter will res
 ### II. Step 2: Install ADDS Role on DC1
 1. **Install the Active Directory Domain Services (ADDS) role**:
    - In the Server Manager, add the ADDS role and follow the instructions to promote the server to a domain controller.
-   - Or Use the `Install-WindowsFeature` cmdlet to install the AD DS role.
+   - Or Use the `Install-WindowsFeature` cmdlet to install the AD DS role, by runing this powershell command with administrative privelege.
+     
    ```
       Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools
    ```
-2. **Domain Configuration**: During the promotion, set up a domain name (e.g., `lgds.local`).
+   
+2. **Domain Configuration**: During the promotion, set up a domain name (e.g., `nextechiq.local`).
 
 ### III. Step 3: Prepare DC2 Server for Redundancy
 1. **Change the hostname** of the second server to `DC2`.
