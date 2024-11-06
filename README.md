@@ -59,13 +59,13 @@ The `-Force` parameter suppresses prompts, and the `-Restart` parameter will res
 
 Use the `Install-ADDSForest` cmdlet to create a new forest and domain.
 ```
-Install-ADDSForest -DomainName "YourDomainName.com" -DomainNetbiosName "YourNetBIOSName" -ForestMode "Win2016" -DomainMode "Win2016" -InstallDns -Confirm:$false -SafeModeAdministratorPassword (ConvertTo-SecureString -AsPlainText "YourSafeModePassword" -Force)
+Install-ADDSForest -DomainName "nextechiq.local" -DomainNetbiosName "NEXTECHIQ" -ForestMode "WinThreshold" -DomainMode "WinThreshold" -InstallDns -Confirm:$false -SafeModeAdministratorPassword (ConvertTo-SecureString -AsPlainText "YourSafeModePassword" -Force)
 ```
 Replace:
 
    ` YourDomainName.com` with your desired domain name.
     `YourNetBIOSName` with the NetBIOS name for the domain.
-    `Win2016` with the functional level you prefer (use Win2016 for Windows Server 2016 or newer).
+    `WinThreshold` with the functional level you prefer (use WinThreshold for Windows Server 2016 or newer).
     `YourSafeModePassword` with the DSRM (Directory Services Restore Mode) password.
 
 ### III. Step 3: Prepare DC2 Server for Redundancy
