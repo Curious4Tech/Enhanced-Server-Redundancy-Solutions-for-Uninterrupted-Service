@@ -57,6 +57,17 @@ The `-Force` parameter suppresses prompts, and the `-Restart` parameter will res
 
 1. **Domain Configuration**: During the promotion, set up a domain name (e.g., `nextechiq.local`).
 
+Use the `Install-ADDSForest` cmdlet to create a new forest and domain.
+```
+Install-ADDSForest -DomainName "YourDomainName.com" -DomainNetbiosName "YourNetBIOSName" -ForestMode "Win2016" -DomainMode "Win2016" -InstallDns -Confirm:$false -SafeModeAdministratorPassword (ConvertTo-SecureString -AsPlainText "YourSafeModePassword" -Force)
+```
+Replace:
+
+   ` YourDomainName.com` with your desired domain name.
+    `YourNetBIOSName` with the NetBIOS name for the domain.
+    `Win2016` with the functional level you prefer (use Win2016 for Windows Server 2016 or newer).
+    `YourSafeModePassword` with the DSRM (Directory Services Restore Mode) password.
+
 ### III. Step 3: Prepare DC2 Server for Redundancy
 1. **Change the hostname** of the second server to `DC2`.
 2. **Check connectivity** with DC1 to ensure DC2 can communicate with it.
