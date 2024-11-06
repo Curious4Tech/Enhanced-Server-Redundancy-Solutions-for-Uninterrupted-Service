@@ -34,6 +34,10 @@ Before starting, make sure to meet the following requirements:
 
 
 2. **Change the hostname** of the server to `DC1`.
+   
+   ```
+   Rename-Computer -NewName "New-ComputerName" -Force -Restart
+```
 
 ### II. Step 2: Install ADDS Role on DC1
 1. **Install the Active Directory Domain Services (ADDS) role**:
