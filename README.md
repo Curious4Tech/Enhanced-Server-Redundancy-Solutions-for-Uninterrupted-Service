@@ -51,8 +51,11 @@ The `-Force` parameter suppresses prompts, and the `-Restart` parameter will res
    ```
       Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools
    ```
-   
-2. **Domain Configuration**: During the promotion, set up a domain name (e.g., `nextechiq.local`).
+
+   ![image](https://github.com/user-attachments/assets/5df83843-6d6c-4154-8ec5-927e77a54472)
+
+
+1. **Domain Configuration**: During the promotion, set up a domain name (e.g., `nextechiq.local`).
 
 ### III. Step 3: Prepare DC2 Server for Redundancy
 1. **Change the hostname** of the second server to `DC2`.
