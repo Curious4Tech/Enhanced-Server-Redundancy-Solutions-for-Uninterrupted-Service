@@ -11,7 +11,7 @@ Before starting, make sure to meet the following requirements:
 - **Operating System**: Use the same version of Windows Server on all hosts (in this example, domain functional level is set to Windows Server 2016).
 - **Shared Domain**: DC1 and DC2 should be joined to the same Active Directory domain.
 - **Admin Accounts**: Have local administrator accounts with super-user rights on each server.
-- **Hardware Requirements**: A computer capable of running 3 virtual machines simultaneously (e.g., VMware Workstation 16).
+- **Hardware Requirements**: A computer capable of running 3 virtual machines simultaneously (e.g., VirtualBox, Hyper-V) .
 
 ## Network Configuration for Virtual Machines
 
@@ -29,6 +29,9 @@ Before starting, make sure to meet the following requirements:
     - Gateway: `192.168.130.2`
     - DNS1: `127.0.0.1`
     - DNS2: `1.1.1.1`
+  
+   ![image](https://github.com/user-attachments/assets/bbae1002-1585-4c17-a79a-067d9f97997b)
+
 
 2. **Change the hostname** of the server to `DC1`.
 
