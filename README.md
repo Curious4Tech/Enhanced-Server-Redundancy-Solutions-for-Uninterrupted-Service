@@ -34,10 +34,14 @@ Before starting, make sure to meet the following requirements:
 
 
 2. **Change the hostname** of the server to `DC1`.
+
+3. Use the `Rename-Computer` cmdlet: Run the following command to rename your computer. Replace `New-ComputerName` with the desired name for your computer or server, here `DC1`.
    
 ```
    Rename-Computer -NewName "New-ComputerName" -Force -Restart
 ```
+
+The `-Force` parameter suppresses prompts, and the `-Restart` parameter will restart the computer automatically for the changes to take effect.
 
 ### II. Step 2: Install ADDS Role on DC1
 1. **Install the Active Directory Domain Services (ADDS) role**:
