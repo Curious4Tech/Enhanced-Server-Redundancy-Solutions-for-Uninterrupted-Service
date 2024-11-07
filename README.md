@@ -61,6 +61,9 @@ Use the `Install-ADDSForest` cmdlet to create a new forest and domain.Remember t
 ```
 Install-ADDSForest -DomainName "nextechiq.local" -DomainNetbiosName "NEXTECHIQ" -ForestMode "WinThreshold" -DomainMode "WinThreshold" -InstallDns -Confirm:$false -SafeModeAdministratorPassword (ConvertTo-SecureString -AsPlainText "YourSafeModePassword" -Force)
 ```
+
+  ![image](https://github.com/user-attachments/assets/3ac9c12f-3752-4541-b583-6b9173e20744)
+
 Replace:
 
    ` YourDomainName.com` with your desired domain name.
@@ -77,12 +80,49 @@ Replace:
  
 ### III. Step 3: Prepare DC2 Server for Redundancy
 1. **Change the hostname** of the second server to `DC2`.
-2. **Check connectivity** with DC1 to ensure DC2 can communicate with it.
+
+      
+```
+   Rename-Computer -NewName "New-ComputerName" -Force -Restart
+```
+
+Replace `New-ComputerName` with the desired name for your computer or server, here `DC2`.
+
+3. **Check connectivity** with DC1 to ensure DC2 can communicate with it by  just pinging the DC1 from DC2.
+
+ ![image](https://github.com/user-attachments/assets/a52bd2fa-b2a3-4678-85ff-1327d3e3260b)
+
 
 ### IV. Step 4: Install ADDS Role on DC2
 1. **Add the ADDS role** on DC2.
-2. **Promote DC2 as a secondary domain controller** by joining the existing domain `nextechiq.local`.
 
+   
+ ```
+      Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools
+   ```
+   
+3. **Promote DC2 as a secondary domain controller** by joining the existing domain `nextechiq.local`.
+
+Use the `Install-ADDSDomainController` cmdlet to add your domain contraoller to your existing domain, here `nextechiq.local`. Remember to run this command as an administrator in PowerShell.
+   
+```
+   Install-ADDSDomainController -DomainName "YourDomainName.com" -InstallDns -Credential (Get-Credential) -SafeModeAdministratorPassword (ConvertTo-SecureString -AsPlainText "YourSafeModePassword" -Force)
+```
+Replace:
+        ` YourDomainName.com` with your existing domain name, here `nextechiq.local`.
+         `YourSafeModePassword` with the DSRM (Directory Services Restore Mode) password.
+
+If you see that you're being prompted for credentials while running the `Install-ADDSDomainController` command.
+
+
+ ![image](https://github.com/user-attachments/assets/c68987cd-963e-445a-a051-dfe9be8768d1)
+
+
+In this prompt:
+1. For `User name`: Enter your domain admin account as `YOURNETBIOSNAME\Administrator`, in my case here `nextechiq\Administrator`.
+2. For `Password`: Enter your domain admin password (not the DSRM password)
+
+This credential is needed because you're adding this server as an additional domain controller to your existing domain "nextechiq.local". The system needs domain administrator privileges to replicate AD data from your existing DC
 ### V. Step 5: Test the Redundancy
 1. **Test redundancy from a client**: Set up a Windows client (e.g., `W10-Client`) to use DC1 and DC2 as DNS servers and test domain access.
 2. **Verify service continuity**: Disable DC1 and check that DC2 takes over authentication for users.
