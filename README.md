@@ -101,7 +101,7 @@ Replace `New-ComputerName` with the desired name for your computer or server, he
       Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools
    ```
    
-3. **Promote DC2 as a secondary domain controller** by joining the existing domain `nextechiq.local`.
+3. **Promote DC2 as a secondary domain controller** by joining the existing domain, in my case here `nextechiq.local`.
 
 Use the `Install-ADDSDomainController` cmdlet to add your domain controller to your existing domain, here `nextechiq.local`. Remember to run this command as an administrator in PowerShell.
    
