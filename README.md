@@ -153,5 +153,6 @@ Server redundancy is crucial for maintaining business continuity and ensuring hi
 3. Zero single points of failure
 3. Simplified disaster recovery
 4. Robust DNS resolution
-
+   
+````````
 By following this guide and implementing these configurations, organizations can achieve a resilient Active Directory infrastructure that maintains availability even during hardware failures or maintenance windows.
