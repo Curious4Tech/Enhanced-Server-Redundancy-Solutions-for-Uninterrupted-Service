@@ -144,9 +144,8 @@ Now, check if  DC2 takes over for FQDN ping.
 
 > ⚠️ **Important**: Windows Server does not currently support failover clustering for domain controllers. It is therefore essential to configure each DNS client with at least two DNS servers (DC1 and DC2 in this example).
 
-> Customize IP addresses, domain names, and specific configurations according to your environment requirements.
-
 ## Conclusion
+
 Server redundancy is crucial for maintaining business continuity and ensuring high availability of Active Directory services. This implementation provides:
 
    1. 99.9% service availability
