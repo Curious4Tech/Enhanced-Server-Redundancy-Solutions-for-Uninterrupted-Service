@@ -103,7 +103,7 @@ Replace `New-ComputerName` with the desired name for your computer or server, he
    
 3. **Promote DC2 as a secondary domain controller** by joining the existing domain `nextechiq.local`.
 
-Use the `Install-ADDSDomainController` cmdlet to add your domain contraoller to your existing domain, here `nextechiq.local`. Remember to run this command as an administrator in PowerShell.
+Use the `Install-ADDSDomainController` cmdlet to add your domain controller to your existing domain, here `nextechiq.local`. Remember to run this command as an administrator in PowerShell.
    
 ```
    Install-ADDSDomainController -DomainName "YourDomainName.com" -InstallDns -Credential (Get-Credential) -SafeModeAdministratorPassword (ConvertTo-SecureString -AsPlainText "YourSafeModePassword" -Force)
