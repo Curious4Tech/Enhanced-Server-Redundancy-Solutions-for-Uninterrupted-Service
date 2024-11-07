@@ -1,5 +1,3 @@
-# Win-server-redundancy
-
 # Setting Up Domain Controller Redundancy – Windows Server
 
 This guide explains how to configure redundancy for your Active Directory domain to ensure service continuity within your corporate network. By setting up a secondary domain controller, you can ensure that in case of a failure, another machine will take over the domain controller role, thereby maintaining the stability and longevity of your infrastructure.
