@@ -143,6 +143,7 @@ Now, check if  DC2 takes over for FQDN ping.
 ## Notes
 
 > ⚠️ **Important**: Windows Server does not currently support failover clustering for domain controllers. It is therefore essential to configure each DNS client with at least two DNS servers (DC1 and DC2 in this example).
+
 > Customize IP addresses, domain names, and specific configurations according to your environment requirements.
 
 ## Conclusion
