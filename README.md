@@ -148,11 +148,10 @@ Now, check if  DC2 takes over for FQDN ping.
 ## Conclusion
 Server redundancy is crucial for maintaining business continuity and ensuring high availability of Active Directory services. This implementation provides:
 
-1. 99.9% service availability
-2. Automatic failover capability
-3. Zero single points of failure
-3. Simplified disaster recovery
-4. Robust DNS resolution
-   
-````````
+   1. 99.9% service availability
+   2. Automatic failover capability
+   3. Zero single points of failure
+   4. Simplified disaster recovery
+   5. Robust DNS resolution
+  
 By following this guide and implementing these configurations, organizations can achieve a resilient Active Directory infrastructure that maintains availability even during hardware failures or maintenance windows.
